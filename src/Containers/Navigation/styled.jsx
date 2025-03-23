@@ -17,7 +17,6 @@ export const VideoBackgroundContainer = styled.div`
   filter: blur(10px);
 `;
 
-
 export const VideoBackground = styled.video`
   position: absolute;
   top: 0;
@@ -37,7 +36,6 @@ export const MaskedVideoContainer = styled.div`
   width: 20%;
   left: 6vw;
   top: 3vw;
-  
 `;
 
 export const MaskedVideo = styled.video`
@@ -63,7 +61,6 @@ export const MaskedVideo = styled.video`
   -webkit-transition: -webkit-mask-image 0.4s ease-in-out;
 `;
 
-
 export const NavContainer = styled.nav`
   position: absolute;
   top: 50%;
@@ -80,7 +77,7 @@ export const NavLink = styled.a`
   font-size: 1.4rem;
   font-weight: 300;
   text-transform: uppercase;
-  font-family: 'Cirka';
+  font-family: "Cirka";
   letter-spacing: 8%;
   transition: opacity 0.3s ease;
   white-space: nowrap;
@@ -89,7 +86,7 @@ export const NavLink = styled.a`
   flex-direction: column;
   gap: 0.5rem;
 
-   img {
+  img {
     height: 2px;
     transform: scaleX(0);
     transform-origin: left center;
@@ -113,13 +110,28 @@ export const Logo = styled.img`
 `;
 
 export const Registration = styled.div`
-  right: 0;
-  right: 10%;
+  right: 7vw;
+  top: 7vh;
   z-index: 40;
   display: flex;
   height: auto;
   position: absolute;
-  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  a {
+    font-family: "Cirka";
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  img {
+    cursor: pointer;
+  }
 `;
 
 export const SocialsContainer = styled.div`

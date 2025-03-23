@@ -7,7 +7,8 @@ import {
   NavContainer,
   NavLink,
   Logo,
-  SocialsContainer
+  SocialsContainer, 
+  Registration
 } from "./styled";
 
 const navLinks = ["Anthem", "Metrotown", "Ethos", "Residencies", "Floor Plans"];
@@ -15,6 +16,10 @@ const navLinks = ["Anthem", "Metrotown", "Ethos", "Residencies", "Floor Plans"];
 const Navigation = () => {
   return (
     <Section>
+        <Registration>
+            <a>Join Us</a>
+            <img src="/static/icon-close.svg" alt="Close" />
+        </Registration>
       <NavContainer>
         {navLinks.map((label) => (
           <NavLink
