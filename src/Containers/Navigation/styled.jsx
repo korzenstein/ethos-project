@@ -111,3 +111,35 @@ export const Logo = styled.img`
   height: auto;
   position: absolute;
 `;
+
+export const Registration = styled.div`
+  right: 0;
+  right: 10%;
+  z-index: 40;
+  display: flex;
+  height: auto;
+  position: absolute;
+  gap: 3rem;
+`;
+
+export const SocialsContainer = styled.div`
+  position: absolute;
+  bottom: 7vh;
+  right: 7vw;
+  display: flex;
+  gap: 1rem;
+  z-index: 20;
+
+  a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    height: 2vh;
+    width: 2vw;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+`;
