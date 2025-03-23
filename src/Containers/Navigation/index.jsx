@@ -7,22 +7,27 @@ import {
   NavContainer,
   NavLink,
   Logo,
-  SocialsContainer, 
-  Registration
+  SocialsContainer,
+  Registration,
 } from "./styled";
+import { useState } from "react";
 
 const navLinks = ["Anthem", "Metrotown", "Ethos", "Residencies", "Floor Plans"];
 
 const Navigation = () => {
+  const [isAltVideoActive, setIsAltVideoActive] = useState(false);
+
   return (
     <Section>
-        <Registration>
-            <a>Join Us</a>
-            <img src="/static/icon-close.svg" alt="Close" />
-        </Registration>
+      <Registration>
+        <a>Join Us</a>
+        <img src="/static/icon-close.svg" alt="Close" />
+      </Registration>
       <NavContainer>
         {navLinks.map((label) => (
           <NavLink
+            onMouseEnter={() => setIsAltVideoActive(true)}
+            onMouseLeave={() => setIsAltVideoActive(false)}
             key={label}
             href={`#${label.toLowerCase().replace(/\s+/g, "-")}`}
           >
@@ -52,21 +57,40 @@ const Navigation = () => {
         </a>
       </SocialsContainer>
 
-      <MaskedVideoContainer>
-        <MaskedVideo autoPlay muted loop playsInline preload="auto">
+      <MaskedVideoContainer isActive={!isAltVideoActive}>
+        <MaskedVideo 
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
           <source src="/motion/home_hero.webm" type="video/webm" />
           Your browser does not support the video tag.
         </MaskedVideo>
-        <Logo
-          src="/static/logo-ethos-full.svg"
-          alt="Ethos Metrotown"
-          href="/"
-        />
       </MaskedVideoContainer>
 
-      <VideoBackgroundContainer>
+      <MaskedVideoContainer  isActive={isAltVideoActive}>
+        <MaskedVideo
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/motion/residences_hero.webm" type="video/webm" />
+        </MaskedVideo>
+      </MaskedVideoContainer>
+      <Logo src="/static/logo-ethos-full.svg" alt="Ethos Metrotown" href="/" />
+
+      <VideoBackgroundContainer isActive={!isAltVideoActive}>
         <VideoBackground autoPlay muted loop playsInline preload="auto">
           <source src="/motion/home_hero.webm" type="video/webm" />
+          Your browser does not support the video tag.
+        </VideoBackground>
+      </VideoBackgroundContainer>
+      <VideoBackgroundContainer isActive={isAltVideoActive}>
+        <VideoBackground autoPlay muted loop playsInline preload="auto">
+          <source src="/motion/residences_hero.webm" type="video/webm" />
           Your browser does not support the video tag.
         </VideoBackground>
       </VideoBackgroundContainer>

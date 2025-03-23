@@ -15,6 +15,8 @@ export const VideoBackgroundContainer = styled.div`
   width: 100%;
   display: flex;
   filter: blur(10px);
+  opacity: ${({ isActive }) => (isActive ? 1 : 0)};
+  transition: opacity 0.4s ease-in-out;
 `;
 
 export const VideoBackground = styled.video`
@@ -36,6 +38,8 @@ export const MaskedVideoContainer = styled.div`
   width: 20%;
   left: 6vw;
   top: 3vw;
+  opacity: ${({ isActive }) => (isActive ? 1 : 0)};
+  transition: opacity 0.4s ease-in-out;
 `;
 
 export const MaskedVideo = styled.video`
@@ -46,7 +50,6 @@ export const MaskedVideo = styled.video`
   top: 0;
   left: 0;
   z-index: 20;
-
   mask-image: url("/static/hero-mask.svg");
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -100,9 +103,9 @@ export const NavLink = styled.a`
 `;
 
 export const Logo = styled.img`
-  right: 0;
+  left: 0;
   top: 43vh;
-  width: 50%;
+  width: 20%;
   z-index: 40;
   display: block;
   height: auto;
