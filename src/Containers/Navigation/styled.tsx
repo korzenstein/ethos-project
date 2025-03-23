@@ -7,7 +7,7 @@ export const Section = styled.section`
   overflow: hidden;
 `;
 
-export const VideoBackgroundContainer = styled.div`
+export const VideoBackgroundContainer = styled.div<{ isActive: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
@@ -29,7 +29,7 @@ export const VideoBackground = styled.video`
   z-index: 0;
 `;
 
-export const MaskedVideoContainer = styled.div`
+export const MaskedVideoContainer = styled.div<{ isActive: boolean }>`
   max-height: 90%;
   height: 70%;
   z-index: 10;
