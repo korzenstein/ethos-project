@@ -62,3 +62,52 @@ export const MaskedVideo = styled.video`
   -webkit-mask-size: contain;
   -webkit-transition: -webkit-mask-image 0.4s ease-in-out;
 `;
+
+
+export const NavContainer = styled.nav`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 5%;
+  z-index: 30;
+`;
+
+export const NavLink = styled.a`
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-family: 'Cirka';
+  letter-spacing: 8%;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+   img {
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.4s ease-in-out;
+    margin-right: auto;
+  }
+
+  &:hover img {
+    transform: scaleX(1);
+  }
+`;
+
+export const Logo = styled.img`
+  right: 0;
+  top: 43vh;
+  width: 50%;
+  z-index: 40;
+  display: block;
+  height: auto;
+  position: absolute;
+`;
