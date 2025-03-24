@@ -8,6 +8,7 @@ const Section = styled.section`
   overflow: hidden;
   padding: 30vh 20vw;
   background: #041c2c;
+  flex-direction: column;
 `;
 
 const CTASection = () => {
