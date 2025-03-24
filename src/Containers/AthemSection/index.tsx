@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import AnthemButton from "../../Components/AnthemButton";
 
 const Section = styled.section`
   display: flex;
@@ -52,13 +53,6 @@ const Paragraph = styled.p`
   color: #dad9d6;
 `;
 
-const AnthemButton = styled.button`
-  background: black;
-  border: black;
-  cursor: pointer;
-  width: auto;
-`;
-
 const AnthemSection = () => {
   return (
     <Section>
@@ -77,7 +71,7 @@ const AnthemSection = () => {
             dramatic growth. Our unwavering ethos for meaningful change.
           </Paragraph>
 
-          <AnthemButton>ANTHEM</AnthemButton>
+          <AnthemButton />
         </TextColumn>
       </FlexContent>
     </Section>
