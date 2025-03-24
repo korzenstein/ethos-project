@@ -15,7 +15,7 @@ const FlexContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 5vw;
+  gap: 5vh;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -31,26 +31,27 @@ const Image = styled.img`
 const TextColumn = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   color: #dad9d6;
   max-width: 40%;
 `;
 
 const StackedTitle = styled.h4`
   font-size: 3rem;
-  line-height: 1;
   letter-spacing: 0.1em;
   white-space: pre-wrap;
-
-  span {
-    display: block;
-  }
+  font-family: "Cirka";
+  letter-spacing: "4%";
+  font-weight: 200;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Paragraph = styled.p`
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #dad9d6;
+  font-family: "OwnersText";
 `;
 
 const AnthemSection = () => {
@@ -64,6 +65,20 @@ const AnthemSection = () => {
             <span>Anthem's</span>
             <span>Metrotown</span>
             <span>Evolution</span>
+            <span style={{ display: "inline-flex", paddingTop: "1rem" }}>
+              <svg
+                width="46"
+                height="3"
+                viewBox="0 0 46 3"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M40.5014 3L45.58 0L21.3775 0L5.07857 0L0 3H40.5014Z"
+                  fill="#DAD9D6"
+                />
+              </svg>
+            </span>
           </StackedTitle>
 
           <Paragraph>

@@ -83,7 +83,7 @@ const OutOfMany = () => {
   return (
     <>
       <svg
-        width="969"
+        width="auto"
         height="707"
         viewBox="0 0 969 707"
         fill="none"
