@@ -9,7 +9,7 @@ const Section = styled.section`
   position: relative;
   width: 100vw;
   overflow: hidden;
-  padding: 14vh 6vw 14vh 6vw;
+  padding: 0 6vw 14vh 6vw;
   background: #041c2c;
   flex-direction: column;
 

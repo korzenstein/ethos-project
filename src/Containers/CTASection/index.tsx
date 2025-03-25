@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { animated, useSpring } from "@react-spring/web";
+import { animated } from "@react-spring/web";
 import styled from "styled-components";
 import OutOfMany from "../../Components/OutOfMany";
 import CanvasSequence from "../../Components/CanvasSequence";
@@ -14,12 +14,7 @@ const Section = styled.section`
   background: #041c2c;
   flex-direction: column;
   height: 100vh;
-  /* padding: 20vh 0; */
-
-  /* @media ${device.mobile} {
-    padding: 2vh 1rem;
-    height: 60vh;
-  } */
+  padding-top: 16vh;
 `;
 
 const BackgroundLayer = animated(styled.div`
@@ -53,7 +48,7 @@ const ForegroundLayer = animated(styled.div`
 `);
 
 const CTASection = () => {
-  const { scrollY, setScrollY, setViewportHeight } = useStore();
+  const { setScrollY, setViewportHeight } = useStore();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -70,27 +65,13 @@ const CTASection = () => {
     };
   }, [setScrollY, setViewportHeight]);
 
-  const foregroundSpring = useSpring({
-    to: {
-      transform: `translateY(${scrollY * 0.1}px)`,
-    },
-    config: { tension: 120, friction: 26 },
-  });
-
-  const backgroundSpring = useSpring({
-    to: {
-      transform: `translateY(${scrollY * 0.005}px)`,
-    },
-    config: { tension: 100, friction: 20 },
-  });
-
   return (
     <Section>
-      <BackgroundLayer style={backgroundSpring}>
+      <BackgroundLayer>
         <CanvasSequence />
       </BackgroundLayer>
 
-      <ForegroundLayer style={foregroundSpring}>
+      <ForegroundLayer>
         <OutOfMany />
       </ForegroundLayer>
     </Section>

@@ -38,7 +38,7 @@ export const PlayContainer = styled.button`
   position: absolute;
   background: none;
   border: none;
-  bottom: 4rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
@@ -50,7 +50,6 @@ export const PlayContainer = styled.button`
   font-family: "OwnersText";
   text-transform: uppercase;
   gap: 1rem;
-  margin-top: 1rem;
 
   img {
     max-width: 40px;

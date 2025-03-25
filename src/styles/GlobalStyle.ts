@@ -62,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'OwnersText', sans-serif;
-    background: black;
+    background: #041C2C;
     overflow-x: hidden;
     color: #DAD9D6;
   }
