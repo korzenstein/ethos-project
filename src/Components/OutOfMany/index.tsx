@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSprings, animated, useSpring } from "@react-spring/web";
 import { paths } from "./paths";
 import styled from "styled-components";
+import useStore from "../../store/useStore";
 
 export const CTA = styled.h3`
   font-size: 3.2rem;
@@ -14,8 +15,7 @@ export const CTA = styled.h3`
   justify-content: center;
 `;
 const OutOfMany = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  const { scrollY, setScrollY, viewportHeight, setViewportHeight } = useStore();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
