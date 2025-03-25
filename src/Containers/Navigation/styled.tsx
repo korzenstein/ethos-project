@@ -19,18 +19,17 @@ export const Section = styled.section<SectionProps>`
 
 export const NavContainer = styled.nav`
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   gap: 5%;
-  z-index: 30;
+  left: 38vw;
+  top: 43.4vh;
+  z-index: 40;
 `;
 
 export const NavLink = styled.a`
   color: white;
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: clamp(0.5rem, 1.2vw, 1.2rem);
   font-weight: 300;
   text-transform: uppercase;
   font-family: "Cirka";
@@ -56,9 +55,9 @@ export const NavLink = styled.a`
 `;
 
 export const Logo = styled.img`
-  left: 0;
-  top: 43vh;
-  width: 20%;
+  left: 18vw;
+  top: 40vh;
+  width: 15%;
   z-index: 40;
   display: block;
   height: auto;
