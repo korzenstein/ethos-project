@@ -21,8 +21,8 @@ const OutOfMany = () => {
     return () => window.removeEventListener("resize", updateTop);
   }, []);
 
-  const baseStart = sectionTop - viewportHeight * 1.2;
-  const baseEnd = sectionTop + viewportHeight * 0.1;
+  const baseStart = sectionTop - viewportHeight;
+  const baseEnd = sectionTop - viewportHeight * 0.44;
 
   const riseStrengths = [
     13.6, 15.8, 13.6, 15.6, 15.2, 14.0, 11.5, 15.3, 11, 12.4, 8.1, 12.1, 7.0,
@@ -59,8 +59,8 @@ const OutOfMany = () => {
     })
   );
 
-  const ctaTriggerStart = sectionTop - viewportHeight * 0.1;
-  const ctaTriggerEnd = sectionTop + viewportHeight * 0.2;
+  const ctaTriggerStart = sectionTop - viewportHeight * 0.8;
+  const ctaTriggerEnd = sectionTop + viewportHeight * 0.03;
 
   const rawProgress =
     (scrollY - ctaTriggerStart) / (ctaTriggerEnd - ctaTriggerStart);

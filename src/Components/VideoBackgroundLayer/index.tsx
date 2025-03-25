@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { VideoBackground, VideoBackgroundContainer } from "./styled";
+import useStore from "../../store/useStore";
 interface BackgroundVideoLayerProps {
   src: string;
   $isActive: boolean;
@@ -11,9 +11,17 @@ const BackgroundVideoLayer = ({
   $isActive,
   preload = "auto",
 }: BackgroundVideoLayerProps) => {
+  const { incrementLoaded } = useStore();
   return (
     <VideoBackgroundContainer $isActive={$isActive}>
-      <VideoBackground autoPlay muted loop playsInline preload={preload}>
+      <VideoBackground
+        onLoadedData={incrementLoaded}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload={preload}
+      >
         <source src={src} type="video/webm" />
         Your browser does not support the video tag.
       </VideoBackground>

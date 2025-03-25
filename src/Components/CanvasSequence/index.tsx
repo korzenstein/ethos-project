@@ -8,13 +8,13 @@ const TOTAL_FRAMES = 44;
 const CanvasWrapper = styled.div`
   width: 100%;
   position: relative;
-  padding: 0 40vw;
+  padding: 0 40vw 10vh 40vw;
 
   @media ${device.tablet} {
-    padding: 0 30vw;
+    padding: 0 40vw;
   }
   @media ${device.mobile} {
-    padding: 0 15vw;
+    padding: 0 15vw 30vh 15vw;
   }
 `;
 

@@ -97,7 +97,9 @@ const MenuBar = () => {
   return (
     <MenuHeader $scrolled={isScrolled}>
       <CenteredLogo>
-        <img src="/static/logo-ethos-collapsed.svg" alt="Ethos" />
+        <a href="/">
+          <img src="/static/logo-ethos-collapsed.svg" alt="Ethos" />
+        </a>
       </CenteredLogo>
       <Register>Register</Register>
       <IconButton onClick={toggleMenu} aria-label="Toggle menu">
