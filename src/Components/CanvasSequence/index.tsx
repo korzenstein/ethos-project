@@ -1,14 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import useStore from "../../store/useStore";
 import styled from "styled-components";
+import { device } from "../../styles/breakpoints";
 
 const TOTAL_FRAMES = 44;
 
 const CanvasWrapper = styled.div`
   width: 100%;
-  height: 100vh;
   position: relative;
-  padding: 20vw 20vh;
+  padding: 0 40vw;
+
+  @media ${device.tablet} {
+    padding: 0 30vw;
+  }
+  @media ${device.mobile} {
+    padding: 0 15vw;
+  }
 `;
 
 const Canvas = styled.canvas`
@@ -65,7 +72,6 @@ const CanvasSequence = () => {
 
     const rect = sectionRef.current?.getBoundingClientRect();
     const topOffset = (rect?.top ?? 0) + window.scrollY;
-    const height = rect?.height ?? viewportHeight;
     const offsetStart = topOffset - viewportHeight * 0.9;
     const animationHeight = viewportHeight * 0.6;
 

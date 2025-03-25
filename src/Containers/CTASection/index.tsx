@@ -13,32 +13,43 @@ const Section = styled.section`
   overflow: hidden;
   background: #041c2c;
   flex-direction: column;
-  padding: 20vh 20vw;
+  height: 100vh;
+  /* padding: 20vh 0; */
 
-  @media ${device.mobile} {
+  /* @media ${device.mobile} {
     padding: 2vh 1rem;
-    height: 70vh;
-  }
+    height: 60vh;
+  } */
 `;
 
 const BackgroundLayer = animated(styled.div`
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   top: 0;
   left: 0;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 140vh;
+  /* transform: translate(-50%, -50%); */
+  /* width: 100vw; */
+  height: 120vh;
   z-index: 0;
   overflow: hidden;
-  padding: 30vh;
+  /* padding: 10vh; */
+
+  @media ${device.mobile} {
+    padding: 2vh 1rem;
+    height: 100vh;
+  }
 `);
 
 const ForegroundLayer = animated(styled.div`
   position: relative;
   z-index: 20;
-  display: flex;
+  padding: 2rem;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
 `);
 
 const CTASection = () => {

@@ -27,9 +27,11 @@ const Image = styled.img<{ $isRevealed: boolean }>`
   ${({ $isRevealed }) =>
     $isRevealed
       ? css`
+          /* eslint-disable */
           transform: scale(1) translateY(0);
         `
       : css`
+          /* eslint-disable */
           transform: scale(1.1) translateY(100px);
         `}
 `;
