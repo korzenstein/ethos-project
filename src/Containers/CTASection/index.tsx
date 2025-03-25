@@ -12,6 +12,7 @@ const Section = styled.section`
   overflow: hidden;
   background: #041c2c;
   flex-direction: column;
+  padding: 20vh 20vw;
 `;
 
 const BackgroundLayer = animated(styled.div`
@@ -20,7 +21,7 @@ const BackgroundLayer = animated(styled.div`
   left: 0;
   transform: translate(-50%, -50%);
   width: 100vw;
-  height: 100vh;
+  height: 140vh;
   z-index: 0;
   overflow: hidden;
   padding: 30vh;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import useStore from "../../store/useStore";
 
-const MenuWrapper = styled.div`
+const MenuHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
@@ -57,7 +57,7 @@ const MenuBar = () => {
   };
 
   return (
-    <MenuWrapper>
+    <MenuHeader>
       <CenteredLogo>
         <img src="/static/logo-ethos-collapsed.svg" alt="Ethos" />
       </CenteredLogo>
@@ -65,7 +65,7 @@ const MenuBar = () => {
       <IconButton onClick={toggleMenu} aria-label="Toggle menu">
         <img src="/static/icon-menu.svg" alt="Menu Icon" />
       </IconButton>
-    </MenuWrapper>
+    </MenuHeader>
   );
 };
 
