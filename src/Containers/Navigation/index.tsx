@@ -5,6 +5,7 @@ import {
   Logo,
   SocialsContainer,
   Registration,
+  IconButton,
 } from "./styled";
 import MaskedVideoLayer from "../../Components/MaskVideoLayer";
 import BackgroundVideoLayer from "../../Components/VideoBackgroundLayer";
@@ -37,7 +38,9 @@ const Navigation = () => {
     <Section $isVisible={isNavOpen}>
       <Registration>
         <a>Join Us</a>
-        <img src="/static/icon-close.svg" alt="Close" />
+        <IconButton onClick={toggleMenu}>
+          <img src="/static/icon-close.svg" alt="Close" />
+        </IconButton>
       </Registration>
       <NavContainer>
         {navLinks.map((label) => (

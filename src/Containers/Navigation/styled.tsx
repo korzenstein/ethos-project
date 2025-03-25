@@ -14,6 +14,7 @@ export const Section = styled.section<SectionProps>`
   opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
   pointer-events: ${({ $isVisible }) => ($isVisible ? "auto" : "none")};
   transition: opacity 0.4s ease;
+  background: #041c2c;
 `;
 
 export const NavContainer = styled.nav`
@@ -65,8 +66,8 @@ export const Logo = styled.img`
 `;
 
 export const Registration = styled.div`
-  right: 7vw;
-  top: 7vh;
+  right: 2rem;
+  top: 1.8rem;
   z-index: 40;
   display: flex;
   height: auto;
@@ -77,7 +78,7 @@ export const Registration = styled.div`
 
   a {
     font-family: "Cirka";
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 300;
     text-transform: uppercase;
     text-decoration: underline;
@@ -108,5 +109,20 @@ export const SocialsContainer = styled.div`
       width: 100%;
       object-fit: contain;
     }
+  }
+`;
+
+export const IconButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 28px;
+    height: 28px;
   }
 `;
