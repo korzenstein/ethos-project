@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import AnthemButton from "../../Components/AnthemButton";
 import ImageReveal from "../../Components/ImageReveal";
+import { device } from "../../styles/breakpoints";
 
 const Section = styled.section`
   display: flex;
@@ -11,31 +12,37 @@ const Section = styled.section`
   padding: 30vh 20vw;
   background: #041c2c;
   flex-direction: column;
+
+  @media ${device.tablet} {
+    padding: 5vh 6vw 8vh 6vw;
+  }
+
+  @media ${device.mobile} {
+    padding: 5vh 5vw 8vh 5vw;
+  }
 `;
 
 const FlexContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 5vh;
+  gap: 4vh;
 
-  @media (max-width: 768px) {
+  @media ${device.tablet} {
     flex-direction: column;
   }
-`;
-
-const Image = styled.img`
-  width: 40%;
-  height: auto;
-  object-fit: cover;
 `;
 
 const TextColumn = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4vh;
   color: #dad9d6;
   max-width: 40%;
+
+  @media ${device.tablet} {
+    max-width: 100%;
+  }
 `;
 
 const StackedTitle = styled.h4`

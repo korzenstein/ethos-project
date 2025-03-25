@@ -4,6 +4,7 @@ import styled from "styled-components";
 import OutOfMany from "../../Components/OutOfMany";
 import CanvasSequence from "../../Components/CanvasSequence";
 import useStore from "../../store/useStore";
+import { device } from "../../styles/breakpoints";
 
 const Section = styled.section`
   display: flex;
@@ -13,6 +14,11 @@ const Section = styled.section`
   background: #041c2c;
   flex-direction: column;
   padding: 20vh 20vw;
+
+  @media ${device.mobile} {
+    padding: 2vh 1rem;
+    height: 70vh;
+  }
 `;
 
 const BackgroundLayer = animated(styled.div`

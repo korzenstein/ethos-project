@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSprings, animated, useSpring } from "@react-spring/web";
 import useStore from "../../store/useStore";
 import { paths } from "./paths";
-import { Wrapper, CTA } from "./styled";
-
+import { Wrapper, CTA, StyledSVG } from "./styled";
 const OutOfMany = () => {
   const { scrollY, viewportHeight } = useStore();
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -89,19 +88,13 @@ const OutOfMany = () => {
 
   return (
     <Wrapper ref={sectionRef}>
-      <svg
-        width="auto"
-        height="707"
-        viewBox="0 0 969 707"
-        fill="none"
-        style={{ padding: "10vh", overflow: "visible" }}
-      >
+      <StyledSVG viewBox="0 0 969 707" fill="none">
         {springs.map((style, i) => (
           <AnimatedGroup key={i} style={{ transform: style.transform }}>
             <AnimatedPath d={paths[i]} style={{ fill: style.fill }} />
           </AnimatedGroup>
         ))}
-      </svg>
+      </StyledSVG>
 
       <AnimatedCTA style={ctaSpring}>
         <span>One Residence.</span>

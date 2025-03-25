@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import BackgroundVideoLayer from "../../Components/VideoBackgroundLayer";
 import MaskedVideoLayer from "../../Components/MaskVideoLayer";
-
+import { device } from "../../styles/breakpoints";
 export const Section = styled.section`
   position: relative;
   width: 100vw;
@@ -15,9 +15,22 @@ const LogoWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 20;
+  margin-top: 1rem;
 
   img {
     width: 35vw;
+  }
+
+  @media ${device.tablet} {
+    img {
+      width: 70vw;
+    }
+  }
+
+  @media ${device.mobile} {
+    img {
+      width: 80vw;
+    }
   }
 `;
 
@@ -51,7 +64,7 @@ const HomeSection = () => {
       <MaskedVideoLayer
         src="/motion/home_hero.webm"
         $center={true}
-        width="20%"
+        width="28%"
         height="50%"
         zIndex={1}
         $isActive={true}

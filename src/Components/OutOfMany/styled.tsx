@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../styles/breakpoints";
 
 export const Wrapper = styled.div`
   position: relative;
@@ -18,4 +19,20 @@ export const CTA = styled.h3`
   text-transform: uppercase;
   font-size: clamp(1rem, 2.2vw, 2rem);
   font-weight: 200;
+
+  @media ${device.mobile} {
+    flex-direction: column;
+  }
+`;
+
+export const StyledSVG = styled.svg`
+  width: 100%;
+  height: 707px;
+  padding: 10vh;
+  overflow: visible;
+
+  @media ${device.mobile} {
+    padding: 0vh;
+    height: auto;
+  }
 `;
