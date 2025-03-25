@@ -8,15 +8,29 @@ import {
 } from "./styled";
 import MaskedVideoLayer from "../../Components/MaskVideoLayer";
 import BackgroundVideoLayer from "../../Components/VideoBackgroundLayer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import useStore from "../../store/useStore";
 
 const navLinks = ["Anthem", "Metrotown", "Ethos", "Residencies", "Floor Plans"];
 
 const Navigation = () => {
   const [isAltVideoActive, setIsAltVideoActive] = useState(false);
+  const { isNavOpen } = useStore();
+
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isNavOpen]);
 
   return (
-    <Section>
+    <Section $isVisible={isNavOpen}>
       <Registration>
         <a>Join Us</a>
         <img src="/static/icon-close.svg" alt="Close" />

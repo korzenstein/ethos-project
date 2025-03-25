@@ -4,15 +4,12 @@ import HomeSection from "../HomeSection";
 import CTASection from "../CTASection";
 import AnthemSection from "../AthemSection";
 import MenuBar from "../../Components/MenuBar";
-import useStore from "../../store/useStore";
 
 const MainPage = () => {
-  const { isNavOpen } = useStore();
-
   return (
     <Main>
       <MenuBar />
-      {isNavOpen && <NavigationSection />}
+      <NavigationSection />
       <HomeSection />
       <CTASection />
       <AnthemSection />

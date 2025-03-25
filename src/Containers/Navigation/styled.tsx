@@ -1,10 +1,19 @@
 import styled from "styled-components";
+interface SectionProps {
+  $isVisible: boolean;
+}
 
-export const Section = styled.section`
-  position: relative;
+export const Section = styled.section<SectionProps>`
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 100;
   overflow: hidden;
+  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+  pointer-events: ${({ $isVisible }) => ($isVisible ? "auto" : "none")};
+  transition: opacity 0.4s ease;
 `;
 
 export const NavContainer = styled.nav`
