@@ -59,8 +59,8 @@ const OutOfMany = () => {
     })
   );
 
-  const ctaTriggerStart = sectionTop - viewportHeight * 0.1;
-  const ctaTriggerEnd = sectionTop + viewportHeight * 0.2;
+  const ctaTriggerStart = sectionTop - viewportHeight * 0.8;
+  const ctaTriggerEnd = sectionTop + viewportHeight * 0.03;
 
   const rawProgress =
     (scrollY - ctaTriggerStart) / (ctaTriggerEnd - ctaTriggerStart);

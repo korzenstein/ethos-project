@@ -17,11 +17,18 @@ export const CTA = styled.h3`
   justify-content: center;
   font-family: "OwnersText";
   text-transform: uppercase;
-  font-size: clamp(1rem, 2.2vw, 2rem);
+  font-size: clamp(1rem, 4vw, 4.5rem);
   font-weight: 200;
+  overflow: visible;
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    font-size: 3.4rem;
+    margin-top: 5rem;
+  }
 
   @media ${device.mobile} {
-    flex-direction: column;
+    font-size: 2.4rem;
   }
 `;
 

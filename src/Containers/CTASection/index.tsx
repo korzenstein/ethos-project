@@ -15,6 +15,11 @@ const Section = styled.section`
   flex-direction: column;
   height: 100vh;
   padding-top: 16vh;
+  overflow: visible;
+
+  @media ${device.mobile} {
+    height: auto;
+  }
 `;
 
 const BackgroundLayer = animated(styled.div`
@@ -25,6 +30,7 @@ const BackgroundLayer = animated(styled.div`
   width: 100%;
   top: 0;
   left: 0;
+  height: auto;
   /* transform: translate(-50%, -50%); */
   /* width: 100vw; */
   height: 120vh;
