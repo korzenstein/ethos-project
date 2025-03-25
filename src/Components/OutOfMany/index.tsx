@@ -60,12 +60,14 @@ const OutOfMany = () => {
     })
   );
 
-  const ctaStart = sectionTop + 400;
-  const ctaEnd = ctaStart + viewportHeight * 0.5;
-  const ctaProgress = Math.min(
-    1,
-    Math.max(0, (scrollY - ctaStart) / (ctaEnd - ctaStart))
-  );
+  const ctaTriggerStart = sectionTop - viewportHeight * 0.1;
+  const ctaTriggerEnd = sectionTop + viewportHeight * 0.2;
+
+  const rawProgress =
+    (scrollY - ctaTriggerStart) / (ctaTriggerEnd - ctaTriggerStart);
+  const ctaProgress = Math.min(1, Math.max(0, rawProgress));
+
+  const translateY = (1 - ctaProgress) * 220;
 
   const dark = [3, 21, 33];
   const light = [218, 217, 214];
@@ -75,6 +77,8 @@ const OutOfMany = () => {
   const textColor = `rgb(${lerpedCTA[0]}, ${lerpedCTA[1]}, ${lerpedCTA[2]})`;
 
   const ctaSpring = useSpring({
+    opacity: ctaProgress,
+    transform: `translateY(${translateY}px)`,
     color: textColor,
     config: { mass: 1, tension: 120, friction: 20 },
   });

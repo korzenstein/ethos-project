@@ -55,14 +55,14 @@ const CTASection = () => {
 
   const foregroundSpring = useSpring({
     to: {
-      transform: `translateY(${scrollY * 0.2}px)`,
+      transform: `translateY(${scrollY * 0.1}px)`,
     },
     config: { tension: 120, friction: 26 },
   });
 
   const backgroundSpring = useSpring({
     to: {
-      transform: `translateY(${scrollY * 0.05}px)`,
+      transform: `translateY(${scrollY * 0.005}px)`,
     },
     config: { tension: 100, friction: 20 },
   });
