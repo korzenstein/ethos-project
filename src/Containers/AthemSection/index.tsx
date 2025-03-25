@@ -1,5 +1,7 @@
+import { useState } from "react";
 import styled from "styled-components";
 import AnthemButton from "../../Components/AnthemButton";
+import ImageReveal from "../../Components/ImageReveal";
 
 const Section = styled.section`
   display: flex;
@@ -55,11 +57,15 @@ const Paragraph = styled.p`
 `;
 
 const AnthemSection = () => {
+  const [isClicked, setIsClicked] = useState(false);
   return (
     <Section>
       <FlexContent>
-        <Image src="/static/home-1.webp" alt="Anthem Buildings" />
-
+        <ImageReveal
+          isRevealed={isClicked}
+          src="/static/home-1.webp"
+          alt="Anthem Buildings"
+        />
         <TextColumn>
           <StackedTitle>
             <span>Anthem's</span>
@@ -86,7 +92,7 @@ const AnthemSection = () => {
             dramatic growth. Our unwavering ethos for meaningful change.
           </Paragraph>
 
-          <AnthemButton />
+          <AnthemButton onClick={() => setIsClicked(!isClicked)} />
         </TextColumn>
       </FlexContent>
     </Section>

@@ -4,7 +4,7 @@ import { useSpring, animated } from "@react-spring/web";
 
 const AnimatedPath = animated("path");
 
-const AnthemButton = () => {
+const AnthemButton = ({ onClick }) => {
   const [hovered, setHovered] = useState(false);
 
   const textSpring = useSpring({
@@ -33,6 +33,7 @@ const AnthemButton = () => {
 
   return (
     <SvgWrapper
+      onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
