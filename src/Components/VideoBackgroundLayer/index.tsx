@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { VideoBackground, VideoBackgroundContainer } from "./styled";
 interface BackgroundVideoLayerProps {
   src: string;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../styles/breakpoints";
 interface SectionProps {
   $isVisible: boolean;
 }
@@ -11,10 +12,13 @@ export const Section = styled.section<SectionProps>`
   height: 100vh;
   z-index: 100;
   overflow: hidden;
+  background: #041c2c;
+
   opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
   pointer-events: ${({ $isVisible }) => ($isVisible ? "auto" : "none")};
-  transition: opacity 0.4s ease;
-  background: #041c2c;
+  transform: ${({ $isVisible }) =>
+    $isVisible ? "translateX(0)" : "translateX(-100%)"};
+  transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 `;
 
 export const NavContainer = styled.nav`
@@ -65,8 +69,8 @@ export const Logo = styled.img`
 `;
 
 export const Registration = styled.div`
-  right: 2rem;
-  top: 1.8rem;
+  right: 4rem;
+  top: 3rem;
   z-index: 40;
   display: flex;
   height: auto;
@@ -86,6 +90,19 @@ export const Registration = styled.div`
 
   img {
     cursor: pointer;
+  }
+
+  @media ${device.tablet} {
+    right: 6vw;
+    top: 1.75rem;
+  }
+
+  @media ${device.mobile} {
+    right: 1.5rem;
+    top: 1.5rem;
+    a {
+      display: none;
+    }
   }
 `;
 

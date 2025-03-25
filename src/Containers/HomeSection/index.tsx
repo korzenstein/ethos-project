@@ -34,8 +34,10 @@ const LogoWrapper = styled.div`
   }
 `;
 
-export const PlayContainer = styled.div`
+export const PlayContainer = styled.button`
   position: absolute;
+  background: none;
+  border: none;
   bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
@@ -48,6 +50,7 @@ export const PlayContainer = styled.div`
   font-family: "OwnersText";
   text-transform: uppercase;
   gap: 1rem;
+  margin-top: 1rem;
 
   img {
     max-width: 40px;
@@ -55,6 +58,7 @@ export const PlayContainer = styled.div`
 
   p {
     font-size: 0.8rem;
+    color: #dad9d6;
   }
 `;
 
@@ -71,7 +75,9 @@ const HomeSection = () => {
       />
 
       <LogoWrapper>
-        <img src="/static/logo-ethos-full.svg" alt="Ethos Metrotown" />
+        <a href="/">
+          <img src="/static/logo-ethos-full.svg" alt="Ethos Metrotown" />
+        </a>
       </LogoWrapper>
 
       <PlayContainer>
