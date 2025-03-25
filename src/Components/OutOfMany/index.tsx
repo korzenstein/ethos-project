@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSprings, animated, useSpring } from "@react-spring/web";
 import { paths } from "./paths";
 import styled from "styled-components";

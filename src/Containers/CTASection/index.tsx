@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import OutOfMany from "../../Components/OutOfMany";
+import CanvasSequence from "../../Components/CanvasSequence";
 
 const Section = styled.section`
   display: flex;
@@ -15,6 +16,7 @@ const CTASection = () => {
   return (
     <Section>
       <OutOfMany />
+      <CanvasSequence />
     </Section>
   );
 };
