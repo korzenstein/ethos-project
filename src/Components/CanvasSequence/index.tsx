@@ -8,6 +8,7 @@ const CanvasWrapper = styled.div`
   width: 100%;
   height: 100vh;
   position: relative;
+  padding: 20vw 20vh;
 `;
 
 const Canvas = styled.canvas`
@@ -65,9 +66,13 @@ const CanvasSequence = () => {
     const rect = sectionRef.current?.getBoundingClientRect();
     const topOffset = (rect?.top ?? 0) + window.scrollY;
     const height = rect?.height ?? viewportHeight;
-    const offsetStart = topOffset - viewportHeight * 0.5;
+    const offsetStart = topOffset - viewportHeight * 0.9;
+    const animationHeight = viewportHeight * 0.6;
 
-    const progress = Math.min(1, Math.max(0, (scrollY - offsetStart) / height));
+    const progress = Math.min(
+      1,
+      Math.max(0, (scrollY - offsetStart) / animationHeight)
+    );
 
     const frameIndex = Math.floor(progress * (TOTAL_FRAMES - 1));
     const image = images[frameIndex];

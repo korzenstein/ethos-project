@@ -22,7 +22,7 @@ const OutOfMany = () => {
     return () => window.removeEventListener("resize", updateTop);
   }, []);
 
-  const baseStart = sectionTop - viewportHeight * 0.7;
+  const baseStart = sectionTop - viewportHeight * 1.2;
   const baseEnd = sectionTop + viewportHeight * 0.1;
 
   const riseStrengths = [
