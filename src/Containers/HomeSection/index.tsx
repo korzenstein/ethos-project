@@ -9,38 +9,33 @@ export const Section = styled.section`
   overflow: hidden;
 `;
 
-const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 20;
+const LogoWrapper = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 2rem 0 6rem 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
 
-  img:nth-child(1) {
-    width: 100px;
-  }
-
-  img:nth-child(2) {
-    width: 300px;
-  }
-
-  img:nth-child(3) {
-    width: 60px;
+  img {
+    width: 35vw;
   }
 `;
 
 export const PlayContainer = styled.div`
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   font-family: "OwnersText";
   text-transform: uppercase;
   gap: 1rem;
+
   img {
     max-width: 40px;
   }
@@ -62,17 +57,18 @@ const HomeSection = () => {
         $isActive={true}
       />
 
-      <TitleContainer>
-        <img src="/static/logo-ethos-collapsed.svg" alt="Ethos" />
+      <LogoWrapper>
         <img src="/static/logo-ethos-full.svg" alt="Ethos Metrotown" />
+      </LogoWrapper>
 
-        <PlayContainer>
-          <img src="/icons/play.svg" alt="Ethos Metrotown" />
-          <p>Watch Video</p>
-        </PlayContainer>
-      </TitleContainer>
+      <PlayContainer>
+        <img src="/icons/play.svg" alt="Play Video" />
+        <p>Watch Video</p>
+      </PlayContainer>
+
       <BackgroundVideoLayer src="/motion/home_hero.webm" $isActive={true} />
     </Section>
   );
 };
+
 export default HomeSection;

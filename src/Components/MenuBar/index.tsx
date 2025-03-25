@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Image from "next/image";
 import useStore from "../../store/useStore";
 
 const MenuWrapper = styled.div`
@@ -12,9 +11,19 @@ const MenuWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  z-index: 1000;
-  background: rgba(4, 28, 44, 0.9);
-  backdrop-filter: blur(8px);
+  z-index: 100;
+`;
+
+const CenteredLogo = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    height: 28px;
+    width: auto;
+  }
 `;
 
 const IconButton = styled.button`
@@ -32,6 +41,14 @@ const IconButton = styled.button`
   }
 `;
 
+const Register = styled.a`
+  font-family: "OwnersText";
+  text-transform: uppercase;
+  text-decoration: underline;
+  padding-right: 2rem;
+  cursor: pointer;
+`;
+
 const MenuBar = () => {
   const { isNavOpen, setIsNavOpen } = useStore();
 
@@ -41,6 +58,10 @@ const MenuBar = () => {
 
   return (
     <MenuWrapper>
+      <CenteredLogo>
+        <img src="/static/logo-ethos-collapsed.svg" alt="Ethos" />
+      </CenteredLogo>
+      <Register>Register</Register>
       <IconButton onClick={toggleMenu} aria-label="Toggle menu">
         <img src="/static/icon-menu.svg" alt="Menu Icon" />
       </IconButton>

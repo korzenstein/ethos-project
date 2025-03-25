@@ -15,7 +15,11 @@ const navLinks = ["Anthem", "Metrotown", "Ethos", "Residencies", "Floor Plans"];
 
 const Navigation = () => {
   const [isAltVideoActive, setIsAltVideoActive] = useState(false);
-  const { isNavOpen } = useStore();
+  const { isNavOpen, setIsNavOpen } = useStore();
+
+  const toggleMenu = () => {
+    setIsNavOpen(!isNavOpen);
+  };
 
   useEffect(() => {
     if (isNavOpen) {
