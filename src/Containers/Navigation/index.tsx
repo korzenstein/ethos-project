@@ -13,6 +13,23 @@ import { useState, useEffect } from "react";
 import useStore from "../../store/useStore";
 
 const navLinks = ["Anthem", "Metrotown", "Ethos", "Residencies", "Floor Plans"];
+const socialLinks = [
+  {
+    href: "https://x.com",
+    icon: "/icons/twitter.svg",
+    alt: "Twitter",
+  },
+  {
+    href: "https://linkedin.com",
+    icon: "/icons/linkedin.svg",
+    alt: "LinkedIn",
+  },
+  {
+    href: "https://instagram.com",
+    icon: "/icons/instagram.svg",
+    alt: "Instagram",
+  },
+];
 
 const Navigation = () => {
   const [isAltVideoActive, setIsAltVideoActive] = useState(false);
@@ -57,23 +74,11 @@ const Navigation = () => {
       </NavContainer>
 
       <SocialsContainer>
-        <a href="https://x.com" target="_blank" rel="noopener noreferrer">
-          <img src="/icons/twitter.svg" alt="Twitter" />
-        </a>
-        <a
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/icons/linkedin.svg" alt="LinkedIn" />
-        </a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/icons/instagram.svg" alt="Instagram" />
-        </a>
+        {socialLinks.map(({ href, icon, alt }) => (
+          <a key={href} href={href} target="_blank" rel="noopener noreferrer">
+            <img src={icon} alt={alt} />
+          </a>
+        ))}
       </SocialsContainer>
 
       <MaskedVideoLayer
