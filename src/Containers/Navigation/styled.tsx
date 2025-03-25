@@ -28,6 +28,12 @@ export const NavContainer = styled.nav`
   left: 38vw;
   top: 43.4vh;
   z-index: 40;
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    left: 28vw;
+    top: 30vh;
+  }
 `;
 
 export const NavLink = styled.a`
@@ -56,6 +62,13 @@ export const NavLink = styled.a`
   &:hover img {
     transform: scaleX(1);
   }
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    font-size: 2rem;
+    color: #dad9d6;
+    gap: 1.4rem;
+  }
 `;
 
 export const Logo = styled.img`
@@ -66,6 +79,10 @@ export const Logo = styled.img`
   display: block;
   height: auto;
   position: absolute;
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 export const Registration = styled.div`
@@ -125,6 +142,18 @@ export const SocialsContainer = styled.div`
       width: 100%;
       object-fit: contain;
     }
+  }
+
+  @media ${device.tablet} {
+    gap: 2rem;
+    a {
+      height: 3vh;
+      width: 3vw;
+    }
+  }
+
+  @media ${device.mobile} {
+    display: none;
   }
 `;
 
