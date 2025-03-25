@@ -1,5 +1,5 @@
 import { MaskedVideoContainer, MaskedVideo } from "./styled";
-
+import useStore from "../../store/useStore";
 interface MaskedVideoLayerProps {
   src: string;
   $isActive: boolean;
@@ -20,9 +20,18 @@ const MaskedVideoLayer = ({
   preload = "auto",
   ...props
 }: MaskedVideoLayerProps) => {
+  const { incrementLoaded } = useStore();
+
   return (
     <MaskedVideoContainer $isActive={$isActive} {...props}>
-      <MaskedVideo autoPlay muted loop playsInline preload={preload}>
+      <MaskedVideo
+        onLoadedData={incrementLoaded}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload={preload}
+      >
         <source src={src} type="video/webm" />
         Your browser does not support the video tag.
       </MaskedVideo>
