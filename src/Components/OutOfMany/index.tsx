@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useSprings, animated, useSpring } from "@react-spring/web";
 import { paths } from "./paths";
 import styled from "styled-components";
@@ -14,20 +13,9 @@ export const CTA = styled.h3`
   align-items: center;
   justify-content: center;
 `;
+
 const OutOfMany = () => {
-  const { scrollY, setScrollY, viewportHeight, setViewportHeight } = useStore();
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    const handleResize = () => setViewportHeight(window.innerHeight);
-
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const { scrollY, viewportHeight } = useStore();
 
   // 'from many one' component
   const springs = useSprings(
@@ -57,7 +45,6 @@ const OutOfMany = () => {
   );
 
   // CTA component
-
   const ctaTriggerStart = 950;
   const ctaTriggerEnd = ctaTriggerStart + viewportHeight * 0.5;
 
@@ -83,6 +70,7 @@ const OutOfMany = () => {
   return (
     <>
       <svg
+        style={{ padding: "10vh" }}
         width="auto"
         height="707"
         viewBox="0 0 969 707"

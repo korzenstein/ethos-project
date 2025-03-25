@@ -1,4 +1,3 @@
-// /components/CanvasSequence.tsx
 import { useEffect, useRef, useState } from "react";
 import useStore from "../../store/useStore";
 import styled from "styled-components";
