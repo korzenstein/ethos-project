@@ -9,7 +9,7 @@ const Section = styled.section`
   position: relative;
   width: 100vw;
   overflow: hidden;
-  padding: 30vh 20vw;
+  padding: 14vh 6vw 14vh 6vw;
   background: #041c2c;
   flex-direction: column;
 
@@ -26,7 +26,7 @@ const FlexContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 4vh;
+  gap: 6vw;
 
   @media ${device.tablet} {
     flex-direction: column;
@@ -36,9 +36,10 @@ const FlexContent = styled.div`
 const TextColumn = styled.div`
   display: flex;
   flex-direction: column;
+  align-self: center;
   gap: 4vh;
   color: #dad9d6;
-  max-width: 40%;
+  max-width: 30%;
 
   @media ${device.tablet} {
     max-width: 100%;

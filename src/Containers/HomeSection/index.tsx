@@ -18,7 +18,7 @@ const LogoWrapper = styled.div`
   margin-top: 1rem;
 
   img {
-    width: 35vw;
+    width: 48vw;
   }
 
   @media ${device.tablet} {
@@ -65,7 +65,7 @@ const HomeSection = () => {
         src="/motion/home_hero.webm"
         $center={true}
         width="28%"
-        height="50%"
+        height="68%"
         zIndex={1}
         $isActive={true}
       />

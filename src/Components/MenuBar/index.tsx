@@ -2,7 +2,11 @@ import styled from "styled-components";
 import useStore from "../../store/useStore";
 import { device } from "../../styles/breakpoints";
 
-const MenuHeader = styled.header`
+interface MenuHeaderProps {
+  $scrolled: boolean;
+}
+
+export const MenuHeader = styled.header<MenuHeaderProps>`
   position: fixed;
   top: 0;
   left: 0;
@@ -13,6 +17,22 @@ const MenuHeader = styled.header`
   justify-content: flex-end;
   align-items: center;
   z-index: 100;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(4, 28, 44, 0.7) 10%,
+      transparent 90%
+    );
+    backdrop-filter: blur(4px);
+    opacity: ${({ $scrolled }) => ($scrolled ? 1 : 0)};
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: -1;
+  }
 
   @media ${device.tablet} {
     padding: 1.75rem 6vw;
@@ -67,14 +87,15 @@ const Register = styled.a`
 `;
 
 const MenuBar = () => {
-  const { isNavOpen, setIsNavOpen } = useStore();
+  const { isNavOpen, setIsNavOpen, scrollY } = useStore();
+  const isScrolled = scrollY > 30;
 
   const toggleMenu = () => {
     setIsNavOpen(!isNavOpen);
   };
 
   return (
-    <MenuHeader>
+    <MenuHeader $scrolled={isScrolled}>
       <CenteredLogo>
         <img src="/static/logo-ethos-collapsed.svg" alt="Ethos" />
       </CenteredLogo>
