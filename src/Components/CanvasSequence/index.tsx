@@ -31,6 +31,7 @@ const CanvasSequence = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
+  // Preload all images
   useEffect(() => {
     const preload = async () => {
       const imgs: HTMLImageElement[] = [];
@@ -38,10 +39,13 @@ const CanvasSequence = () => {
         const padded = String(i).padStart(2, "0");
         const img = new Image();
         img.src = `/static/face_frames/Face${padded}.webp`;
-        await new Promise((res) => (img.onload = res));
+        try {
+          await img.decode();
+        } catch (e) {
+          console.warn("Image failed to decode:", img.src);
+        }
         imgs.push(img);
       }
-
       setImages(imgs);
     };
     preload();
@@ -66,6 +70,19 @@ const CanvasSequence = () => {
   useEffect(() => {
     if (!images.length || !canvasRef.current) return;
 
+    const ctx = canvasRef.current.getContext("2d");
+    if (!ctx) return;
+
+    const image = images[0];
+    canvasRef.current.width = image.width;
+    canvasRef.current.height = image.height;
+    ctx.clearRect(0, 0, image.width, image.height);
+    ctx.drawImage(image, 0, 0);
+  }, [images]);
+
+  useEffect(() => {
+    if (!isVisible || !images.length || !canvasRef.current) return;
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -88,7 +105,7 @@ const CanvasSequence = () => {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(image, 0, 0);
-  }, [scrollY, images, isVisible]);
+  }, [scrollY, isVisible, images, viewportHeight]);
 
   return (
     <CanvasWrapper ref={sectionRef}>
